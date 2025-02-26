@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "2024 BMW ALPINA XB7 with exclusive details",
+        "description": "Discover the extraordinary features and luxurious details of the 2024 BMW ALPINA XB7.",
+        "image": "/assets/cars/Figure → Link.png",
+        "date": "November 22, 2023",
+        "tags": ["Sound"]
+    },
+    {
+        "id": 2,
+        "title": "BMW X6 M50i is designed to exceed your sportiest",
+        "description": "The BMW X6 M50i combines performance with elegance, offering an unmatched automotive experience.",
+        "image": "/assets/cars/Figure → Link (2).png",
+        "date": "November 22, 2023",
+        "tags": ["Accessories"]
+    },
+    {
+        "id": 3,
+        "title": "BMW X5 Gold 2024 Sport Review",
+        "description": "A comprehensive review of the BMW X5 Gold 2024, focusing on its sporty features and performance.",
+        "image": "/assets/cars/Figure → Link (1).png",
+        "date": "November 22, 2023",
+        "tags": ["Exterior"]
+    }
+]

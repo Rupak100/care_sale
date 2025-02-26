@@ -15,6 +15,7 @@
 </head>
 
 <body class="font-poppins">
+    <!-- header -->
     <header class="flex items-center justify-between px-8 py-4 bg-white shadow-md">
         <!-- Logo & Contact -->
         <div class="flex items-center space-x-4">
@@ -23,7 +24,7 @@
                 📱 <span class="ml-2">+75 123 456 789</span>
             </span>
         </div>
-    
+
         <!-- Navigation Links -->
         <nav class="hidden md:flex items-center space-x-4 text-gray-700">
             <a href="#" class="hover:text-gray-900">Home</a>
@@ -33,22 +34,26 @@
             <a href="#" class="hover:text-gray-900">About</a>
             <a href="#" class="hover:text-gray-900">Contact</a>
         </nav>
-    
+
         <!-- User Info Section -->
         <div class="flex items-center space-x-4">
             <a href="#" id="signin-link-desktop" data-signin class="hover:text-gray-900 cursor-pointer">👤 Sign In</a>
-            <button id="logout-btn-desktop" class="hidden bg-red-500 text-white px-3 py-1 rounded-lg text-sm hover:bg-red-600 transition">Logout</button>
+            <button id="logout-btn-desktop"
+                class="hidden bg-red-500 text-white px-3 py-1 rounded-lg text-sm hover:bg-red-600 transition">Logout</button>
         </div>
-    
+
         <!-- Submit Listing Button -->
-        <button class="hidden md:block border border-gray-700 text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100">Submit Listing</button>
-    
+        <button
+            class="hidden md:block border border-gray-700 text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100">Submit
+            Listing</button>
+
         <!-- Mobile Menu Button -->
         <button id="menu-btn" class="md:hidden text-gray-900 text-3xl focus:outline-none">☰</button>
     </header>
-    
+
     <!-- Mobile Menu (Hidden by Default) -->
-    <nav id="mobile-menu" class="hidden flex flex-col items-center bg-white shadow-md absolute top-16 left-0 w-full py-4 space-y-4 text-gray-700">
+    <nav id="mobile-menu"
+        class="hidden flex flex-col items-center bg-white shadow-md absolute top-16 left-0 w-full py-4 space-y-4 text-gray-700">
         <a href="#" class="hover:text-gray-900">Home</a>
         <a href="#" class="hover:text-gray-900">Listings</a>
         <a href="#" class="hover:text-gray-900">Blog</a>
@@ -58,11 +63,13 @@
         <!-- Mobile Sign-In -->
         <div class="flex items-center">
             <a href="#" id="signin-link-mobile" data-signin class="hover:text-gray-900 cursor-pointer">👤 Sign In</a>
-            <button id="logout-btn-mobile" class="hidden bg-red-500 text-white px-3 py-1 rounded-lg text-sm hover:bg-red-600 transition">Logout</button>
+            <button id="logout-btn-mobile"
+                class="hidden bg-red-500 text-white px-3 py-1 rounded-lg text-sm hover:bg-red-600 transition">Logout</button>
         </div>
-        <button class="border border-gray-700 text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100">Submit Listing</button>
+        <button class="border border-gray-700 text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100">Submit
+            Listing</button>
     </nav>
-    
+
     <!-- Sign In Modal (Initially Hidden) -->
     <div id="signin-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center">
         <div class="bg-white p-6 rounded-lg shadow-lg w-96">
@@ -70,23 +77,26 @@
             <form id="signin-form">
                 <label class="block mb-2">Name:</label>
                 <input type="text" id="name" class="w-full px-3 py-2 border rounded mb-4" required>
-    
+
                 <label class="block mb-2">Email:</label>
                 <input type="email" id="email" class="w-full px-3 py-2 border rounded mb-4" required>
-    
+
                 <label class="block mb-2">Password:</label>
                 <input type="password" id="password" class="w-full px-3 py-2 border rounded mb-4" required>
-    
-                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Submit</button>
+
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Submit</button>
             </form>
             <!-- Close Button -->
             <button id="close-modal" class="mt-4 w-full text-center text-gray-500 hover:text-gray-900">Cancel</button>
         </div>
     </div>
-    
-    
+
+    <!-- header completed -->
 
 
+
+    <!-- hero section -->
     <main class="bg-[#F5F7FE] px-4 md:px-0">
         <section class="text-center py-16">
             <!-- Small Description -->
@@ -100,40 +110,37 @@
                 <div
                     class="bg-white rounded-2xl shadow-lg md:rounded-full flex flex-wrap md:flex-nowrap items-center px-4 py-3 space-y-3 md:space-y-0 md:space-x-4 w-full max-w-3xl">
 
-                    <select class="bg-transparent text-gray-700 outline-none w-full md:w-auto px-2">
-                        <option>Used Cars</option>
-                        <option>New Cars</option>
+                    <select id="typeFilter" class="bg-transparent text-gray-700 outline-none px-2">
+                        <option value="In Stock">All Types</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="Van">Van</option>
+                        <option value="Convertible">Convertible</option>
                     </select>
-
-                    <span class="hidden md:block border-l border-gray-300 h-6"></span>
-
-                    <select class="bg-transparent text-gray-700 outline-none w-full md:w-auto px-2">
-                        <option>Any Makes</option>
-                        <option>Tesla</option>
-                        <option>BMW</option>
-                        <option>Audi</option>
+            
+                    <select id="fuelFilter" class="bg-transparent text-gray-700 outline-none px-2">
+                        <option value="">All Fuel Types</option>
+                        <option value="Petrol">Petrol</option>
+                        <option value="Diesel">Diesel</option>
                     </select>
-
-                    <span class="hidden md:block border-l border-gray-300 h-6"></span>
-
-                    <select class="bg-transparent text-gray-700 outline-none w-full md:w-auto px-2">
-                        <option>Any Models</option>
-                        <option>Model S</option>
-                        <option>Model X</option>
-                        <option>Model 3</option>
+            
+                    <select id="transmissionFilter" class="bg-transparent text-gray-700 outline-none px-5">
+                        <option value="">All Transmissions</option>
+                        <option value="CVT">CVT</option>
+                        <option value="Automatic">Automatic</option>
+                        <option value="Manual">Manual</option>
                     </select>
-
-                    <span class="hidden md:block border-l border-gray-300 h-6"></span>
-
-                    <select class="bg-transparent text-gray-700 outline-none w-full md:w-auto px-2">
-                        <option>All Prices</option>
-                        <option>$10,000 - $20,000</option>
-                        <option>$20,000 - $50,000</option>
+            
+                    <select id="priceFilter" class="bg-transparent text-gray-700 outline-none px-2">
+                        <option value="">All Price</option>
+                        <option value="CVT">>$50,000</option>
+                        <option value="Automatic">>$1,00,000</option>
+                        <option value="Manual">>$30,000</option>
                     </select>
-
+            
                     <!-- Search Button -->
-                    <button
-                        class="bg-blue-600 text-white rounded-full p-3 w-full md:w-auto flex justify-center ml-auto">
+                    <button class="bg-blue-600 text-white rounded-full p-3 w-full md:w-auto flex justify-center ml-auto" 
+                        onclick="goToMostSearchedType(document.getElementById('typeFilter').value)">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="white">
                             <path fill-rule="evenodd"
                                 d="M8 3a5 5 0 015 5 5 5 0 01-1.025 3.086l3.742 3.741a1 1 0 11-1.415 1.415l-3.741-3.742A5 5 0 118 3zm0 2a3 3 0 100 6 3 3 0 000-6z"
@@ -150,66 +157,74 @@
         </section>
     </main>
 
-
+    <!-- browse by type -->
     <div class="px-4 md:max-w-screen-lg md:mx-auto">
         <!-- Browse by Type Section -->
         <section class="text-center max-w-screen-lg mx-auto py-12">
             <h2 class="text-2xl font-semibold text-gray-900">Browse by Type</h2>
 
             <div class="mt-6 flex flex-wrap justify-center gap-4">
-                <!-- Car Type Cards -->
-                <div
-                    class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md">
+                <!-- SUV -->
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                    onclick="goToMostSearchedType('SUV')">
                     <img src="/assets/SUV.png" alt="SUV" class="w-8 h-8">
                     <span class="text-sm font-semibold text-gray-900 mt-2">SUV</span>
                 </div>
 
-                <div
-                    class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md">
+                <!-- Sedan -->
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                    onclick="goToMostSearchedType('Sedan')">
                     <img src="/assets/SEDAN.png" alt="Sedan" class="w-8 h-8">
-                    <span class="text-sm text-gray-700 mt-2">Sedan</span>
+                    <span class="text-sm font-semibold text-gray-900 mt-2">Sedan</span>
                 </div>
 
-                <div
-                    class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md">
+                <!-- Hatchback -->
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                    onclick="goToMostSearchedType('Hatchback')">
                     <img src="/assets/HATCHBACK.png" alt="Hatchback" class="w-8 h-8">
-                    <span class="text-sm text-gray-700 mt-2">Hatchback</span>
+                    <span class="text-sm font-semibold text-gray-900 mt-2">Hatchback</span>
                 </div>
 
-                <div
-                    class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md">
+                <!-- Coupe -->
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                    onclick="goToMostSearchedType('Coupe')">
                     <img src="/assets/Coupe.png" alt="Coupe" class="w-8 h-8">
-                    <span class="text-sm text-gray-700 mt-2">Coupe</span>
+                    <span class="text-sm font-semibold text-gray-900 mt-2">Coupe</span>
                 </div>
 
-                <div
-                    class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md">
+                <!-- Hybrid -->
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                    onclick="goToMostSearchedType('Hybrid')">
                     <img src="/assets/Hybrid.png" alt="Hybrid" class="w-8 h-8">
-                    <span class="text-sm text-gray-700 mt-2">Hybrid</span>
+                    <span class="text-sm font-semibold text-gray-900 mt-2">Hybrid</span>
                 </div>
 
-                <div
-                    class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md">
+                <!-- Convertible -->
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                    onclick="goToMostSearchedType('Convertible')">
                     <img src="/assets/Convertible.png" alt="Convertible" class="w-8 h-8">
-                    <span class="text-sm text-gray-700 mt-2">Convertible</span>
+                    <span class="text-sm font-semibold text-gray-900 mt-2">Convertible</span>
                 </div>
 
-                <div
-                    class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md">
+                <!-- Van -->
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                    onclick="goToMostSearchedType('Van')">
                     <img src="/assets/Van.png" alt="Van" class="w-8 h-8">
-                    <span class="text-sm text-gray-700 mt-2">Van</span>
+                    <span class="text-sm font-semibold text-gray-900 mt-2">Van</span>
                 </div>
 
-                <div
-                    class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md">
+                <!-- Truck -->
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                    onclick="goToMostSearchedType('Truck')">
                     <img src="/assets/Truck.png" alt="Truck" class="w-8 h-8">
-                    <span class="text-sm text-gray-700 mt-2">Truck</span>
+                    <span class="text-sm font-semibold text-gray-900 mt-2">Truck</span>
                 </div>
 
-                <div
-                    class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md">
+                <!-- Electric -->
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                    onclick="goToMostSearchedType('Electric')">
                     <img src="/assets/Electric.png" alt="Electric" class="w-8 h-8">
-                    <span class="text-sm text-gray-700 mt-2">Electric</span>
+                    <span class="text-sm font-semibold text-gray-900 mt-2">Electric</span>
                 </div>
             </div>
         </section>
@@ -250,117 +265,39 @@
         </section>
 
 
-
-        <section class="max-w-screen-lg mx-auto py-12 px-4">
+        <!-- Most Searched Cars -->
+        <section class="max-w-screen-lg mx-auto py-12 px-4" id="most-cont">
             <h2 class="text-3xl font-semibold text-gray-900 text-center">The Most Searched Cars</h2>
 
             <!-- Tab Navigation -->
-            <div class="flex justify-center space-x-6 mt-6 border-b overflow-x-auto">
-                <button class="pb-2 border-b-2 border-blue-600 text-blue-600 font-semibold">In Stock</button>
-                <button class="pb-2 text-gray-600 hover:text-gray-900">Sedan</button>
-                <button class="pb-2 text-gray-600 hover:text-gray-900">SUV</button>
-                <button class="pb-2 text-gray-600 hover:text-gray-900">Convertible</button>
+            <div class="flex justify-center space-x-6 mt-6 border-b overflow-x-auto" id="tab-navigation">
+                <button class="pb-2 border-b-2 border-blue-600 text-blue-600 font-semibold" data-type="In Stock">In
+                    Stock</button>
+                <button class="pb-2 text-gray-600 hover:text-gray-900" data-type="Sedan">Sedan</button>
+                <button class="pb-2 text-gray-600 hover:text-gray-900" data-type="SUV">SUV</button>
+                <button class="pb-2 text-gray-600 hover:text-gray-900" data-type="Convertible">Convertible</button>
             </div>
 
-            <!-- Cars Listing (Grid Layout) -->
-            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Car Card 1 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="relative">
-                        <img src="/assets/cars/car1.png" alt="Ford Transit" class="w-full h-40 object-cover">
-                        <span class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 text-xs rounded">Great
-                            Price</span>
-                        <button class="absolute top-2 right-2 bg-white p-1 rounded-full shadow">🔖</button>
-                    </div>
-                    <div class="p-4 bg-gray-900 text-white">
-                        <h3 class="text-lg font-semibold">Ford Transit – 2021</h3>
-                        <p class="text-sm opacity-80">4.0 D5 PowerPulse Momentum 5dr AWD...</p>
-                        <div class="flex justify-between text-xs mt-3">
-                            <span>2500 Miles</span>
-                            <span>Diesel</span>
-                            <span>Manual</span>
-                        </div>
-                        <div class="flex justify-between items-center mt-4">
-                            <span class="text-xl font-bold">$22,000</span>
-                            <button class="text-white underline">View Details →</button>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Car Card 2 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="relative">
-                        <img src="/assets/cars/car2.png" alt="New GLC" class="w-full h-40 object-cover">
-                        <span class="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 text-xs rounded">Low
-                            Mileage</span>
-                        <button class="absolute top-2 right-2 bg-white p-1 rounded-full shadow">🔖</button>
-                    </div>
-                    <div class="p-4 bg-gray-900 text-white">
-                        <h3 class="text-lg font-semibold">New GLC – 2023</h3>
-                        <p class="text-sm opacity-80">4.0 D5 PowerPulse Momentum 5dr AWD...</p>
-                        <div class="flex justify-between text-xs mt-3">
-                            <span>50 Miles</span>
-                            <span>Petrol</span>
-                            <span>Automatic</span>
-                        </div>
-                        <div class="flex justify-between items-center mt-4">
-                            <span class="text-xl font-bold">$95,000</span>
-                            <button class="text-white underline">View Details →</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car Card 3 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="relative">
-                        <img src="/assets/cars/car3.png" alt="Audi A6" class="w-full h-40 object-cover">
-                        <button class="absolute top-2 right-2 bg-white p-1 rounded-full shadow">🔖</button>
-                    </div>
-                    <div class="p-4 bg-gray-900 text-white">
-                        <h3 class="text-lg font-semibold">Audi A6 3.5 – New</h3>
-                        <p class="text-sm opacity-80">3.5 D5 PowerPulse Momentum 5dr AWD...</p>
-                        <div class="flex justify-between text-xs mt-3">
-                            <span>100 Miles</span>
-                            <span>Petrol</span>
-                            <span>Automatic</span>
-                        </div>
-                        <div class="flex justify-between items-center mt-4">
-                            <span class="text-xl font-bold">$58,000</span>
-                            <button class="text-white underline">View Details →</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car Card 4 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="relative">
-                        <img src="/assets/cars/car4.png" alt="Corolla Altis" class="w-full h-40 object-cover">
-                        <button class="absolute top-2 right-2 bg-white p-1 rounded-full shadow">🔖</button>
-                    </div>
-                    <div class="p-4 bg-gray-900 text-white">
-                        <h3 class="text-lg font-semibold">Corolla Altis – 2023</h3>
-                        <p class="text-sm opacity-80">3.5 D5 PowerPulse Momentum 5dr AWD...</p>
-                        <div class="flex justify-between text-xs mt-3">
-                            <span>15000 Miles</span>
-                            <span>Petrol</span>
-                            <span>CVT</span>
-                        </div>
-                        <div class="flex justify-between items-center mt-4">
-                            <span class="text-xl font-bold">$45,000</span>
-                            <button class="text-white underline">View Details →</button>
-                        </div>
-                    </div>
-                </div>
+            <!-- Cars Listing -->
+            <div id="most-searched-car-container"
+                class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Most Searched Car Cards will be added dynamically here -->
             </div>
 
             <!-- Pagination -->
-            <div class="flex justify-center mt-6 space-x-4">
-                <button class="p-2 bg-gray-300 rounded-full">←</button>
-                <button class="p-2 bg-gray-300 rounded-full">→</button>
+            <div class="flex justify-center mt-6 space-x-4" id="most-searched-pagination-container">
+                <!-- Pagination buttons for Most Searched Cars -->
             </div>
         </section>
-
-
+        <!-- Most Searched Cars Modal -->
+        <div id="mostSearchedCarModal"
+            class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div id="mostSearchedCarModalContent" class="bg-white p-6 rounded-lg shadow-lg w-96">
+                <!-- Car details will be dynamically inserted here -->
+            </div>
+        </div>
+        <!-- why choose cars -->
         <section class="bg-[#F9FBFC] py-16 px-6 rounded-3xl">
             <h2 class="text-3xl font-semibold text-gray-900 text-center mb-12">Why Choose Us?</h2>
 
@@ -398,93 +335,16 @@
                 </div>
             </div>
         </section>
-      <!-- Latest Cars -->
+        <!-- Latest Cars -->
         <section class="py-16 px-6">
             <h2 class="text-3xl font-semibold text-gray-900 text-center mb-8">Latest Cars</h2>
 
-            <div class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Car Card 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md h-full flex flex-col">
-                    <img src="/assets/latest_cars/latest1.png" alt="T-Cross 2023" class="w-full h-40 object-cover">
-                    <div class="p-4 bg-gray-900 text-white flex flex-col flex-grow">
-                        <h3 class="text-lg font-semibold">T-Cross – 2023</h3>
-                        <p class="text-sm text-gray-400 flex-grow">4.0 D5 PowerPulse Momentum 5dr AWD</p>
-                        <div class="mt-auto">
-                            <span class="text-sm block">15 Miles • Petrol • CVT</span>
-                            <div class="flex justify-between items-center mt-4">
-                                <span class="text-xl font-bold">$15,000</span>
-                                <a href="#" class="text-blue-400 hover:underline">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car Card 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md h-full flex flex-col">
-                    <img src="/assets/latest_cars/latest2.png" alt="C-Class 2023" class="w-full h-40 object-cover">
-                    <div class="p-4 bg-gray-900 text-white flex flex-col flex-grow">
-                        <h3 class="text-lg font-semibold">C-Class – 2023</h3>
-                        <p class="text-sm text-gray-400 flex-grow">4.0 D5 PowerPulse Momentum 5dr AWD</p>
-                        <div class="mt-auto">
-                            <span class="text-sm block">50 Miles • Petrol • Automatic</span>
-                            <div class="flex justify-between items-center mt-4">
-                                <span class="text-xl font-bold">$150,000</span>
-                                <a href="#" class="text-blue-400 hover:underline">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car Card 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md h-full flex flex-col relative">
-                    <img src="/assets/latest_cars/latest3.png" alt="Ford Transit 2021" class="w-full h-40 object-cover">
-                    <span class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 text-xs rounded">Great
-                        Price</span>
-                    <div class="p-4 bg-gray-900 text-white flex flex-col flex-grow">
-                        <h3 class="text-lg font-semibold">Ford Transit – 2021</h3>
-                        <p class="text-sm text-gray-400 flex-grow">4.0 D5 PowerPulse Momentum 5dr AWD</p>
-                        <div class="mt-auto">
-                            <span class="text-sm block">2500 Miles • Diesel • Manual</span>
-                            <div class="flex justify-between items-center mt-4">
-                                <span class="text-xl font-bold">$22,000</span>
-                                <a href="#" class="text-blue-400 hover:underline">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Car Card 4 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md h-full flex flex-col relative">
-                    <img src="/assets/latest_cars/latest4.png" alt="New GLC 2023" class="w-full h-40 object-cover">
-                    <span class="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 text-xs rounded">Low
-                        Mileage</span>
-                    <div class="p-4 bg-gray-900 text-white flex flex-col flex-grow">
-                        <h3 class="text-lg font-semibold">New GLC – 2023</h3>
-                        <p class="text-sm text-gray-400 flex-grow">4.0 D5 PowerPulse Momentum 5dr AWD</p>
-                        <div class="mt-auto">
-                            <span class="text-sm block">50 Miles • Petrol • Automatic</span>
-                            <div class="flex justify-between items-center mt-4">
-                                <span class="text-xl font-bold">$95,000</span>
-                                <a href="#" class="text-blue-400 hover:underline">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
+                id="latest-car-container"></div>
 
             <!-- Pagination -->
-            <div class="flex justify-center mt-6">
-                <button
-                    class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-full hover:bg-gray-200">
-                    &lt;
-                </button>
-                <button
-                    class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-full hover:bg-gray-200 ml-2">
-                    &gt;
-                </button>
-            </div>
+            <div class="flex justify-center mt-6" id="latest-pagination-container"></div>
 
-            <!-- Inspiration Section -->
             <h3 class="text-2xl font-semibold text-gray-900 mt-12 mb-6">Need Some Inspiration?</h3>
             <div class="flex flex-wrap gap-3">
                 <button class="px-4 py-2 border rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200">Automatic
@@ -500,8 +360,17 @@
                     class="px-4 py-2 border rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200">Diesel</button>
             </div>
         </section>
+        <!-- Car Details Modal -->
+        <div id="car-details-modal"
+            class="fixed inset-0 flex items-center justify-center z-50 hidden bg-transparent bg-opacity-0 backdrop-blur-md">
+            <div id="modal-content" class="bg-white p-6 rounded-lg shadow-lg w-96">
+                <!-- Car details will be inserted dynamically -->
+            </div>
+        </div>
 
     </div>
+
+    <!-- who is boxcar -->
     <section class="bg-[#3B5BFF] py-16 md:px-12 mx-8 rounded-xl">
         <div class="max-w-screen-xl ">
             <div class="flex flex-col md:flex-row items-center text-center md:text-left gap-8">
@@ -538,98 +407,76 @@
         </div>
     </section>
 
-
-
-
-
-
-
-    <section class="py-12 bg-white text-center mx-auto ">
+    <!-- Team Section -->
+    <section class="py-12 bg-white text-center mx-auto">
         <h2 class="text-2xl font-bold text-gray-900">Our Team</h2>
-        <div class="mt-8 flex justify-center gap-6 flex-wrap">
-            <!-- Team Member 1 -->
-            <div class="bg-gray-100 rounded-xl shadow-md w-52">
-                <h3 class="font-semibold text-lg">Courtney Henry</h3>
-                <p class="text-gray-600 text-sm">Development Manager</p>
-                <img src="/assets/teams/team5.jpg.png" alt="Courtney Henry" class="rounded-lg  w-full h-auto ">
-            </div>
-
-            <!-- Team Member 2 -->
-            <div class="bg-blue-100 rounded-xl shadow-md w-52">
-                <h3 class="font-semibold text-lg">Jerome Bell</h3>
-                <p class="text-gray-600 text-sm">Software Developer</p>
-                <img src="/assets/teams/team6-1.jpg.png" alt="Jerome Bell" class="rounded-lg  w-full h-auto">
-            </div>
-
-            <!-- Team Member 3 -->
-            <div class="bg-blue-50  rounded-xl shadow-md w-52">
-                <h3 class="font-semibold text-lg">Jerome Bell</h3>
-                <p class="text-gray-600 text-sm">Software Tester</p>
-                <img src="/assets/teams/team7.jpg.png" alt="Jerome Bell" class="rounded-lg w-full h-auto ">
-            </div>
-
-            <!-- Team Member 4 -->
-            <div class="bg-pink-100  rounded-xl shadow-md w-52">
-                <h3 class="font-semibold text-lg">Arlene McCoy</h3>
-                <p class="text-gray-600 text-sm">Software Developer</p>
-                <img src="/assets/teams/team8.jpg.png" alt="Arlene McCoy" class="rounded-lg  w-full h-auto">
-            </div>
-
-            <!-- Team Member 5 -->
-            <div class="bg-green-100 rounded-xl shadow-md w-52">
-                <h3 class="font-semibold text-lg">Jenny Wilson</h3>
-                <p class="text-gray-600 text-sm">UI/UX Designer</p>
-                <img src="/assets/teams/team9.jpg.png" alt="Jenny Wilson" class="rounded-lg  w-full h-auto">
-            </div>
+        <div class="mt-8 flex justify-center gap-6 flex-wrap" id="team-container">
+            <!-- Team Member Cards will be dynamically added here -->
         </div>
     </section>
 
+    <!-- Latest Blog Posts Section -->
     <section class="py-12 bg-white text-center mx-15">
-        <!-- <div class="container mx-auto"> -->
         <h2 class="text-2xl font-bold text-center mb-6">Latest Blog Posts</h2>
-        <div class="grid md:grid-cols-3 gap-6 mt-8 flex justify-center flex-wrap">
-            <!-- Blog Post 1 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <div class="relative">
-                    <img src="/assets/cars/Figure → Link.png" alt="BMW ALPINA XB7" class="w-full h-56 object-cover">
-                    <span
-                        class="absolute top-3 left-3 bg-white text-gray-700 text-xs font-medium px-2 py-1 rounded-lg shadow">Sound</span>
-                </div>
-                <div class="p-4">
-                    <p class="text-sm text-gray-500">Admin • November 22, 2023</p>
-                    <h3 class="text-lg font-semibold mt-2">2024 BMW ALPINA XB7 with exclusive details, extraordinary
-                    </h3>
-                </div>
-            </div>
+        <div class="grid md:grid-cols-3 gap-6 mt-8 flex justify-center flex-wrap" id="blog-container">
+            <!-- Blog Post Cards will be dynamically added here -->
+        </div>
+    </section>
 
-            <!-- Blog Post 2 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <div class="relative">
-                    <img src="/assets/cars/Figure → Link (2).png" alt="BMW X6 M50i" class="w-full h-56 object-cover">
-                    <span
-                        class="absolute top-3 left-3 bg-white text-gray-700 text-xs font-medium px-2 py-1 rounded-lg shadow">Accessories</span>
-                </div>
-                <div class="p-4">
-                    <p class="text-sm text-gray-500">Admin • November 22, 2023</p>
-                    <h3 class="text-lg font-semibold mt-2">BMW X6 M50i is designed to exceed your sportiest.</h3>
-                </div>
-            </div>
+    <!-- Modal for Blog Posts or Car Details -->
+    <div id="modal"
+        class="fixed inset-0 flex items-center justify-center z-50 hidden bg-transparent bg-opacity-0 backdrop-blur-md">
+        <div class="bg-white rounded-lg shadow-lg p-5 max-w-screen-md w-full mx-auto overflow-y-auto">
+            <button id="modal-close" class="absolute top-2 right-2 bg-gray-200 rounded-full p-1 focus:outline-none">
+                ✖
+            </button>
 
-            <!-- Blog Post 3 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <div class="relative">
-                    <img src="/assets/cars/Figure → Link (1).png" alt="BMW X5 Gold" class="w-full h-56 object-cover">
-                    <span
-                        class="absolute top-3 left-3 bg-white text-gray-700 text-xs font-medium px-2 py-1 rounded-lg shadow">Exterior</span>
+            <div class="flex flex-col md:flex-row">
+                <!-- Main Image Section -->
+                <div class="flex-shrink-0">
+                    <img id="modal-image" src="" alt="Blog Post or Car Image"
+                        class="w-full h-56 object-cover rounded-lg shadow-md">
                 </div>
-                <div class="p-4">
-                    <p class="text-sm text-gray-500">Admin • November 22, 2023</p>
-                    <h3 class="text-lg font-semibold mt-2">BMW X5 Gold 2024 Sport Review: Light on Sport</h3>
+
+                <!-- Details Section -->
+                <div class="md:ml-4 mt-4 md:mt-0">
+                    <h3 id="modal-title" class="text-xl font-semibold mb-2"></h3>
+                    <p id="modal-description" class="mt-2 text-gray-700"></p>
+
+                    <!-- Car Overview Section -->
+                    <div class="mt-4">
+                        <h4 class="font-bold text-lg">Car Overview</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600">
+                            <li><strong>Body:</strong> Sedan</li>
+                            <li><strong>Mileage:</strong> 20 miles</li>
+                            <li><strong>Fuel Type:</strong> Petrol</li>
+                            <li><strong>Transmission:</strong> Automatic</li>
+                            <li><strong>Year:</strong> 2023</li>
+                        </ul>
+                    </div>
+
+                    <!-- Features Section -->
+                    <div class="mt-4">
+                        <h4 class="font-bold text-lg">Features</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600">
+                            <li>A/C</li>
+                            <li>Anti-lock Braking</li>
+                            <li>Leather Seats</li>
+                            <li>Bluetooth</li>
+                            <li>Sunroof</li>
+                        </ul>
+                    </div>
+
+                    <!-- Action Button -->
+                    <div class="mt-4">
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                            Schedule a Test Drive
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- </div> -->
-    </section>
+    </div>
     <section class="py-16 bg-gray-100 mx-12 rounded-2xl">
         <div class="max-w-screen-xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center justify-between">
             <!-- Left Content -->
@@ -667,15 +514,24 @@
             <!-- Email Input Field -->
             <div class="mt-6 flex justify-center">
                 <div class="relative w-full max-w-lg">
-                    <input type="email" placeholder="Your email address"
+                    <input type="email" id="email-input" placeholder="Your email address"
                         class="w-full py-3 pl-4 pr-32 text-gray-700 bg-white border rounded-full shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                    <button
+                    <button id="signup-button"
                         class="absolute right-1 top-1 bottom-1 px-6 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition">
                         Sign Up
                     </button>
                 </div>
             </div>
         </div>
+        <!-- Modal for Congratulations -->
+        <div id="congratulations-modal"
+            class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+            <div class="bg-white p-6 rounded-lg">
+                <p>Congratulations! You have signed up.</p>
+                <button id="modal-close" class="mt-4 px-4 py-2 bg-red-500 text-white rounded">Close</button>
+            </div>
+        </div>
+
     </section>
     <footer class="bg-white py-12">
         <div class="container text-center md:text-left md:mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-900">
@@ -766,7 +622,11 @@
         </div>
     </div>
 
+    <script src="posts.js"></script>
+    <script src="people.js"></script>
+    <script src="carCaourasal.js"></script>
     <script src="script.js"></script>
+    <!-- <script src="mostSearchCar.js"></script> -->
 </body>
 
 </html>

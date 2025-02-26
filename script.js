@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Close Modal
-    closeModal.addEventListener("click", function () {
+    // Close Sign-In Modal
+    closeModal?.addEventListener("click", function () {
         signinModal.classList.add("hidden");
     });
 
     // Handle Sign-In Form Submission
-    signinForm.addEventListener("submit", function (event) {
+    signinForm?.addEventListener("submit", function (event) {
         event.preventDefault();
 
         // Get input values
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Logout Functionality
     [logoutBtnDesktop, logoutBtnMobile].forEach(btn => {
-        btn.addEventListener("click", function () {
+        btn?.addEventListener("click", function () {
             localStorage.removeItem("userName");
             localStorage.removeItem("userEmail");
             localStorage.removeItem("userPassword");
@@ -74,14 +74,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Loading user data on page load
-    window.addEventListener("load", function () {
-        const savedName = localStorage.getItem("userName");
-        updateUserUI(savedName);
+    // Function to show modal
+    function showModal() {
+        const modal = document.getElementById('congratulations-modal');
+        modal?.classList.remove('hidden');
+
+        // Auto-hide the modal after 2 minutes
+        setTimeout(() => {
+            modal?.classList.add('hidden');
+        }, 2000);
+    }
+
+    // Event listener for the Signup button
+    document.getElementById('signup-button')?.addEventListener('click', () => {
+        const emailInput = document.getElementById('email-input');
+        const emailValue = emailInput?.value.trim();
+
+        if (emailValue) {
+            showModal(); 
+            emailInput.value = ''; // Clear the input field
+        } else {
+            alert('Please enter a valid email address.');
+        }
     });
+
+    // Close modal functionality
+    document.getElementById('modal-close')?.addEventListener('click', () => {
+        document.getElementById('congratulations-modal')?.classList.add('hidden');
+    });
+
+    // Load user data on page load
+    const savedName = localStorage.getItem("userName");
+    updateUserUI(savedName);
 });
-
-// https://mmg14xj7-5500.inc1.devtunnels.ms/
-
-
-// https://mmg14xj7-5500.inc1.devtunnels.ms/

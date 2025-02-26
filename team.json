@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Courtney Henry",
+        "position": "Development Manager",
+        "image": "/assets/teams/team5.jpg.png",
+        "alt": "Courtney Henry"
+    },
+    {
+        "name": "Jerome Bell",
+        "position": "Software Developer",
+        "image": "/assets/teams/team6-1.jpg.png",
+        "alt": "Jerome Bell"
+    },
+    {
+        "name": "Jerome Bell",
+        "position": "Software Tester",
+        "image": "/assets/teams/team7.jpg.png",
+        "alt": "Jerome Bell"
+    },
+    {
+        "name": "Arlene McCoy",
+        "position": "Software Developer",
+        "image": "/assets/teams/team8.jpg.png",
+        "alt": "Arlene McCoy"
+    },
+    {
+        "name": "Jenny Wilson",
+        "position": "UI/UX Designer",
+        "image": "/assets/teams/team9.jpg.png",
+        "alt": "Jenny Wilson"
+    }
+]
