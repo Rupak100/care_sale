@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Bar</title>
+    <title>Dream Car</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="output.css">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
 </head>
 
 <body class="font-poppins">
@@ -27,12 +28,12 @@
 
         <!-- Navigation Links -->
         <nav class="hidden md:flex items-center space-x-4 text-gray-700">
-            <a href="#" class="hover:text-gray-900">Home</a>
-            <a href="#" class="hover:text-gray-900">Listings</a>
-            <a href="#" class="hover:text-gray-900">Blog</a>
-            <a href="#" class="hover:text-gray-900">Pages</a>
-            <a href="#" class="hover:text-gray-900">About</a>
-            <a href="#" class="hover:text-gray-900">Contact</a>
+            <a href="#home" class="hover:text-gray-900">Home</a>
+            <a href="#most-cont" class="hover:text-gray-900">Listings</a>
+            <a href="#blog" class="hover:text-gray-900">Blog</a>
+            <a href="#blogs" class="hover:text-gray-900">Pages</a>
+            <a href="#about" class="hover:text-gray-900">About</a>
+            <a href="#contact" class="hover:text-gray-900">Contact</a>
         </nav>
 
         <!-- User Info Section -->
@@ -42,24 +43,79 @@
                 class="hidden bg-red-500 text-white px-3 py-1 rounded-lg text-sm hover:bg-red-600 transition">Logout</button>
         </div>
 
-        <!-- Submit Listing Button -->
-        <button
-            class="hidden md:block border border-gray-700 text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100">Submit
-            Listing</button>
 
+
+        <!-- Submit Listing Button -->
+        <button id="submitListingBtn"
+            class="md:block border border-gray-700 text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+            Submit Listing
+        </button>
+
+        <!-- Modal for submitting new car listing -->
+        <div id="submitModal"
+            class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 overflow-y-auto h-full w-full flex justify-center items-center">
+            <div class="relative m-auto p-8 border w-full max-w-lg shadow-lg rounded-lg bg-white">
+                <h2 class="text-gray-900 text-2xl font-bold mb-6 cursor-pointer">Submit Car Listing</h2>
+                <form id="carForm" class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" placeholder="Brand" name="brand"
+                            class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required>
+                        <input type="text" placeholder="Model" name="model"
+                            class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="number" placeholder="Year" name="year"
+                            class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required>
+                        <input type="text" placeholder="Color" name="color"
+                            class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required>
+                    </div>
+                    <input type="number" placeholder="Price" name="price"
+                        class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required>
+                    <textarea placeholder="Description" name="description"
+                        class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 h-24 resize-none"
+                        required></textarea>
+
+                    <div class="space-y-2">
+                        <label class="block text-sm font-medium text-gray-700">Main Image</label>
+                        <input type="file" name="image"
+                            class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-sm font-medium text-gray-700">Gallery Images</label>
+                        <input type="file" name="gallery" multiple
+                            class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out cursor-pointer">
+                        Submit Listing
+                    </button>
+                    <button type="button" onclick="closeModal()"
+                        class="w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out cursor-pointer">
+                        Cancel
+                    </button>
+                </form>
+            </div>
+        </div>
         <!-- Mobile Menu Button -->
-        <button id="menu-btn" class="md:hidden text-gray-900 text-3xl focus:outline-none">☰</button>
+        <button id="menu-btn" class="md:hidden text-gray-900 text-3xl focus:outline-none cursor-pointer">☰</button>
     </header>
 
     <!-- Mobile Menu (Hidden by Default) -->
     <nav id="mobile-menu"
         class="hidden flex flex-col items-center bg-white shadow-md absolute top-16 left-0 w-full py-4 space-y-4 text-gray-700">
-        <a href="#" class="hover:text-gray-900">Home</a>
-        <a href="#" class="hover:text-gray-900">Listings</a>
-        <a href="#" class="hover:text-gray-900">Blog</a>
-        <a href="#" class="hover:text-gray-900">Pages</a>
-        <a href="#" class="hover:text-gray-900">About</a>
-        <a href="#" class="hover:text-gray-900">Contact</a>
+        <a href="#home" class="hover:text-gray-900">Home</a>
+        <a href="#listings" class="hover:text-gray-900">Listings</a>
+        <a href="#blog" class="hover:text-gray-900">Blog</a>
+        <a href="#pages" class="hover:text-gray-900">Pages</a>
+        <a href="#about" class="hover:text-gray-900">About</a>
+        <a href="#contact" class="hover:text-gray-900">Contact</a>
         <!-- Mobile Sign-In -->
         <div class="flex items-center">
             <a href="#" id="signin-link-mobile" data-signin class="hover:text-gray-900 cursor-pointer">👤 Sign In</a>
@@ -85,10 +141,11 @@
                 <input type="password" id="password" class="w-full px-3 py-2 border rounded mb-4" required>
 
                 <button type="submit"
-                    class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Submit</button>
+                    class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition cursor-pointer">Submit</button>
             </form>
             <!-- Close Button -->
-            <button id="close-modal" class="mt-4 w-full text-center text-gray-500 hover:text-gray-900">Cancel</button>
+            <button id="close-modal"
+                class="mt-4 w-full text-center text-gray-500 hover:text-gray-900 cursor-pointer">Cancel</button>
         </div>
     </div>
 
@@ -103,58 +160,83 @@
             <p class="text-gray-600 text-lg">Find cars for sale and for rent near you</p>
 
             <!-- Main Heading -->
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-3">Find Your Dream Car</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-3" id="started">Find Your Dream Car</h1>
 
             <!-- Search Bar -->
             <div class="mt-8 flex justify-center">
                 <div
                     class="bg-white rounded-2xl shadow-lg md:rounded-full flex flex-wrap md:flex-nowrap items-center px-4 py-3 space-y-3 md:space-y-0 md:space-x-4 w-full max-w-3xl">
 
-                    <select id="typeFilter" class="bg-transparent text-gray-700 outline-none px-2">
-                        <option value="In Stock">All Types</option>
+                    <select id="typeFilter" class="bg-transparent text-gray-700 outline-none px-2 cursor-pointer">
+                        <option value="">All Types</option>
                         <option value="SUV">SUV</option>
                         <option value="Sedan">Sedan</option>
                         <option value="Van">Van</option>
                         <option value="Convertible">Convertible</option>
                     </select>
-            
-                    <select id="fuelFilter" class="bg-transparent text-gray-700 outline-none px-2">
+
+                    <select id="fuelFilter" class="bg-transparent text-gray-700 outline-none px-2 cursor-pointer">
                         <option value="">All Fuel Types</option>
                         <option value="Petrol">Petrol</option>
                         <option value="Diesel">Diesel</option>
                     </select>
-            
-                    <select id="transmissionFilter" class="bg-transparent text-gray-700 outline-none px-5">
+
+                    <select id="transmissionFilter"
+                        class="bg-transparent text-gray-700 outline-none px-5 cursor-pointer">
                         <option value="">All Transmissions</option>
                         <option value="CVT">CVT</option>
                         <option value="Automatic">Automatic</option>
                         <option value="Manual">Manual</option>
                     </select>
-            
-                    <select id="priceFilter" class="bg-transparent text-gray-700 outline-none px-2">
-                        <option value="">All Price</option>
-                        <option value="CVT">>$50,000</option>
-                        <option value="Automatic">>$1,00,000</option>
-                        <option value="Manual">>$30,000</option>
+                    <select id="priceFilter" class="bg-transparent text-gray-700 outline-none px-2 cursor-pointer">
+                        <option value="">All Prices</option>
+                        <option value="0-50000">Under $50,000</option>
+                        <option value="50000-100000">$50,000 to $100,000</option>
+                        <option value="100000-">Over $100,000</option>
                     </select>
-            
+
                     <!-- Search Button -->
-                    <button class="bg-blue-600 text-white rounded-full p-3 w-full md:w-auto flex justify-center ml-auto" 
-                        onclick="goToMostSearchedType(document.getElementById('typeFilter').value)">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="white">
-                            <path fill-rule="evenodd"
-                                d="M8 3a5 5 0 015 5 5 5 0 01-1.025 3.086l3.742 3.741a1 1 0 11-1.415 1.415l-3.741-3.742A5 5 0 118 3zm0 2a3 3 0 100 6 3 3 0 000-6z"
-                                clip-rule="evenodd" />
+                    <button id="searchButton"
+                        class="bg-blue-600 text-white rounded-full p-3 w-full md:w-auto flex justify-center ml-auto cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21L15 15M17 10a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </button>
                 </div>
             </div>
+            <div id="carResults" class="flex flex-wrap justify-center mt-6"></div>
 
             <!-- Car Image -->
             <div class="mt-10 flex justify-center">
                 <img src="assets/slider51.png.png" alt="Car" class="max-w-full md:max-w-4xl px-2 md:px-0">
             </div>
+         
         </section>
+   <!-- Chat Icon -->
+   <div id="chat-icon" class="fixed bottom-4 right-4 bg-blue-500 text-white rounded-full p-3 cursor-pointer shadow-lg">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+    </svg>
+</div>
+
+<!-- Chat Interface (initially hidden) -->
+<div id="chat-box" class="fixed bottom-4 right-4 w-80 bg-white rounded-lg shadow-lg hidden">
+    <div class="bg-blue-500 text-white p-4 rounded-t-lg flex justify-between items-center">
+        <h3 class="font-bold">Chat with Us</h3>
+        <button id="close-chat" class="text-white cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+    <div id="chat-messages" class="h-80 overflow-y-auto p-4"></div>
+    <div class="p-4 border-t">
+        <input type="text" id="user-input" class="w-full p-2 border rounded" placeholder="Ask about our cars...">
+        <button onclick="sendMessage()" class="mt-2 w-full bg-blue-500 text-white p-2 rounded cursor-pointer">Send</button>
+    </div>
+</div>
     </main>
 
     <!-- browse by type -->
@@ -165,63 +247,63 @@
 
             <div class="mt-6 flex flex-wrap justify-center gap-4">
                 <!-- SUV -->
-                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('SUV')">
                     <img src="/assets/SUV.png" alt="SUV" class="w-8 h-8">
                     <span class="text-sm font-semibold text-gray-900 mt-2">SUV</span>
                 </div>
 
                 <!-- Sedan -->
-                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('Sedan')">
                     <img src="/assets/SEDAN.png" alt="Sedan" class="w-8 h-8">
                     <span class="text-sm font-semibold text-gray-900 mt-2">Sedan</span>
                 </div>
 
                 <!-- Hatchback -->
-                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('Hatchback')">
                     <img src="/assets/HATCHBACK.png" alt="Hatchback" class="w-8 h-8">
                     <span class="text-sm font-semibold text-gray-900 mt-2">Hatchback</span>
                 </div>
 
                 <!-- Coupe -->
-                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('Coupe')">
                     <img src="/assets/Coupe.png" alt="Coupe" class="w-8 h-8">
                     <span class="text-sm font-semibold text-gray-900 mt-2">Coupe</span>
                 </div>
 
                 <!-- Hybrid -->
-                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('Hybrid')">
                     <img src="/assets/Hybrid.png" alt="Hybrid" class="w-8 h-8">
                     <span class="text-sm font-semibold text-gray-900 mt-2">Hybrid</span>
                 </div>
 
                 <!-- Convertible -->
-                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('Convertible')">
                     <img src="/assets/Convertible.png" alt="Convertible" class="w-8 h-8">
                     <span class="text-sm font-semibold text-gray-900 mt-2">Convertible</span>
                 </div>
 
                 <!-- Van -->
-                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('Van')">
                     <img src="/assets/Van.png" alt="Van" class="w-8 h-8">
                     <span class="text-sm font-semibold text-gray-900 mt-2">Van</span>
                 </div>
 
                 <!-- Truck -->
-                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('Truck')">
                     <img src="/assets/Truck.png" alt="Truck" class="w-8 h-8">
                     <span class="text-sm font-semibold text-gray-900 mt-2">Truck</span>
                 </div>
 
                 <!-- Electric -->
-                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md"
+                <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('Electric')">
                     <img src="/assets/Electric.png" alt="Electric" class="w-8 h-8">
                     <span class="text-sm font-semibold text-gray-900 mt-2">Electric</span>
@@ -241,7 +323,7 @@
                 <div class="flex items-center justify-between mt-6">
                     <button
                         class="px-4 py-2 bg-blue-600 text-white rounded-lg flex items-center gap-2 hover:bg-blue-700">
-                        Get Started <span>↗</span>
+                        <a href="#started">Get Started </a> <span>↗</span>
                     </button>
                     <img src="/assets/electric-car.svg.png" alt="Car Icon" class="w-16 h-16">
                 </div>
@@ -257,7 +339,8 @@
                 <div class="flex items-center justify-between mt-6">
                     <button
                         class="px-4 py-2 bg-gray-900 text-white rounded-lg flex items-center gap-2 hover:bg-gray-800">
-                        Get Started <span>↗</span>
+
+                        <a href="#started">Get Started</a> <span>↗</span>
                     </button>
                     <img src="/assets/electric-car2.svg.png" alt="Sell Car Icon" class="w-16 h-16">
                 </div>
@@ -271,11 +354,13 @@
 
             <!-- Tab Navigation -->
             <div class="flex justify-center space-x-6 mt-6 border-b overflow-x-auto" id="tab-navigation">
-                <button class="pb-2 border-b-2 border-blue-600 text-blue-600 font-semibold" data-type="In Stock">In
+                <button class="pb-2 border-b-2 border-blue-600 text-blue-600 font-semibold cursor-pointer"
+                    data-type="In Stock">In
                     Stock</button>
-                <button class="pb-2 text-gray-600 hover:text-gray-900" data-type="Sedan">Sedan</button>
-                <button class="pb-2 text-gray-600 hover:text-gray-900" data-type="SUV">SUV</button>
-                <button class="pb-2 text-gray-600 hover:text-gray-900" data-type="Convertible">Convertible</button>
+                <button class="pb-2 text-gray-600 hover:text-gray-900 cursor-pointer" data-type="Sedan">Sedan</button>
+                <button class="pb-2 text-gray-600 hover:text-gray-900 cursor-pointer" data-type="SUV">SUV</button>
+                <button class="pb-2 text-gray-600 hover:text-gray-900 cursor-pointer"
+                    data-type="Convertible">Convertible</button>
             </div>
 
 
@@ -347,17 +432,22 @@
 
             <h3 class="text-2xl font-semibold text-gray-900 mt-12 mb-6">Need Some Inspiration?</h3>
             <div class="flex flex-wrap gap-3">
-                <button class="px-4 py-2 border rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200">Automatic
+                <button
+                    class="px-4 py-2 border rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200 cursor-pointer">Automatic
                     Cars</button>
-                <button class="px-4 py-2 border rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200">SUVs</button>
-                <button class="px-4 py-2 border rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200">Electric
+                <button
+                    class="px-4 py-2 border rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200 cursor-pointer">SUVs</button>
+                <button
+                    class="px-4 py-2 border rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200 cursor-pointer">Electric
                     Cars</button>
-                <button class="px-4 py-2 border rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200">New in
+                <button
+                    class="px-4 py-2 border rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200 cursor-pointer">New
+                    in
                     Stock</button>
                 <button
-                    class="px-4 py-2 border rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200">Petrol</button>
+                    class="px-4 py-2 border rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200 cursor-pointer">Petrol</button>
                 <button
-                    class="px-4 py-2 border rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200">Diesel</button>
+                    class="px-4 py-2 border rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200 cursor-pointer">Diesel</button>
             </div>
         </section>
         <!-- Car Details Modal -->
@@ -371,7 +461,7 @@
     </div>
 
     <!-- who is boxcar -->
-    <section class="bg-[#3B5BFF] py-16 md:px-12 mx-8 rounded-xl">
+    <section class="bg-[#3B5BFF] py-16 md:px-12 mx-8 rounded-xl" id="about">
         <div class="max-w-screen-xl ">
             <div class="flex flex-col md:flex-row items-center text-center md:text-left gap-8">
 
@@ -416,7 +506,7 @@
     </section>
 
     <!-- Latest Blog Posts Section -->
-    <section class="py-12 bg-white text-center mx-15">
+    <section class="py-12 bg-white text-center mx-15" id="blog">
         <h2 class="text-2xl font-bold text-center mb-6">Latest Blog Posts</h2>
         <div class="grid md:grid-cols-3 gap-6 mt-8 flex justify-center flex-wrap" id="blog-container">
             <!-- Blog Post Cards will be dynamically added here -->
@@ -481,16 +571,17 @@
         <div class="max-w-screen-xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center justify-between">
             <!-- Left Content -->
             <div class="lg:w-1/2  lg:text-left">
-                <h2 class="text-3xl md:text-2xl font-bold text-gray-900">Explore Our Premium Brands</h2>
+                <h2 class="text-3xl md:text-2xl font-bold text-gray-900 ">Explore Our Premium Brands</h2>
                 <p class="text-gray-500  mt-4 text-sm md:text-base">
                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
                     est.
                 </p>
-                <button
-                    class="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md flex items-center gap-2 hover:bg-blue-700 transition">
+                <button id="showAllBrandsBtn"
+                    class="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold cursor-pointer rounded-lg shadow-md flex items-center gap-2 hover:bg-blue-700 transition">
                     Show All Brands
                     <span>➜</span>
                 </button>
+                <div class="max-w-screen-xl mx-auto px-6 md:px-12 mt-8" id="brandsContainer"></div>
             </div>
 
             <!-- Right Circular Brand Section -->
@@ -501,6 +592,7 @@
                 </div>
             </div>
         </div>
+        <!-- Container for displaying brands -->
     </section>
 
 
@@ -517,7 +609,7 @@
                     <input type="email" id="email-input" placeholder="Your email address"
                         class="w-full py-3 pl-4 pr-32 text-gray-700 bg-white border rounded-full shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
                     <button id="signup-button"
-                        class="absolute right-1 top-1 bottom-1 px-6 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition">
+                        class="absolute right-1 top-1 bottom-1 px-6 bg-blue-600 cursor-pointer text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition">
                         Sign Up
                     </button>
                 </div>
@@ -525,7 +617,7 @@
         </div>
         <!-- Modal for Congratulations -->
         <div id="congratulations-modal"
-            class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+            class="fixed inset-0 flex items-center justify-center z-50 hidden bg-transparent bg-opacity-50 backdrop-blur-md">
             <div class="bg-white p-6 rounded-lg">
                 <p>Congratulations! You have signed up.</p>
                 <button id="modal-close" class="mt-4 px-4 py-2 bg-red-500 text-white rounded">Close</button>
@@ -533,18 +625,18 @@
         </div>
 
     </section>
-    <footer class="bg-white py-12">
+    <footer class="bg-white py-12" id="contact">
         <div class="container text-center md:text-left md:mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-900">
             <!-- Company -->
             <div>
                 <h3 class="font-semibold text-lg mb-4">Company</h3>
                 <ul class="space-y-2 text-gray-600">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">FAQs</a></li>
                     <li><a href="#">Terms</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -623,9 +715,12 @@
     </div>
 
     <script src="posts.js"></script>
+    <script src="search.js"></script>
     <script src="people.js"></script>
     <script src="carCaourasal.js"></script>
     <script src="script.js"></script>
+    <script src="chat.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <!-- <script src="mostSearchCar.js"></script> -->
 </body>
 

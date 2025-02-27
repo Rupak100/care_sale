@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Auto-hide the modal after 2 minutes
         setTimeout(() => {
             modal?.classList.add('hidden');
-        }, 2000);
+        }, 1000);
     }
 
     // Event listener for the Signup button
@@ -97,6 +97,11 @@ document.addEventListener("DOMContentLoaded", function () {
             alert('Please enter a valid email address.');
         }
     });
+
+
+
+    // submit listing
+    
 
     // Close modal functionality
     document.getElementById('modal-close')?.addEventListener('click', () => {

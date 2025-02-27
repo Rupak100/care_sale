@@ -14,11 +14,11 @@ let selectedType = 'In Stock';
 async function fetchCars() {
     try {
         const response = await fetch('cars.json'); // Adjust path if needed
-        const cars = await response.json();
+       const cars = await response.json();
         
         latestCars = cars.filter(car => car.isLatest === true);// Assign to latest cars globally
         mostSearchedCars = cars.filter(car=>car.mostSearched ===true); // Assign to most searched cars globally
-        
+
         renderLatestCars(); // Render cars for Latest Cars section
         renderMostSearchedCars(); // Render cars for Most Searched Cars section
     } catch (error) {
@@ -302,7 +302,14 @@ function goToMostSearchedType(type) {
     renderMostSearchedCars();
 }
 
-
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
 
 
