@@ -27,17 +27,17 @@
 
         <!-- Navigation Links -->
         <nav class="hidden md:flex items-center space-x-4 text-gray-700">
-            <a href="#home" class="hover:text-gray-900">Home</a>
-            <a href="#most-cont" class="hover:text-gray-900">Listings</a>
-            <a href="#blog" class="hover:text-gray-900">Blog</a>
-            <a href="#blogs" class="hover:text-gray-900">Pages</a>
-            <a href="#about" class="hover:text-gray-900">About</a>
-            <a href="#contact" class="hover:text-gray-900">Contact</a>
+            <a href="#home" class="hover:text-gray-900" aria-label="home">Home</a>
+            <a href="#most-cont" class="hover:text-gray-900" aria-label="Listings">Listings</a>
+            <a href="#blog" class="hover:text-gray-900" aria-label="Blogs">Blog</a>
+            <a href="#blogs" class="hover:text-gray-900" aria-label="Pages">Pages</a>
+            <a href="#about" class="hover:text-gray-900" aria-label="About">About</a>
+            <a href="#contact" class="hover:text-gray-900" aria-label="Contact">Contact</a>
         </nav>
 
         <!-- User Info Section -->
         <div class="flex items-center space-x-4">
-            <a href="#" id="signin-link-desktop" data-signin class="hover:text-gray-900 cursor-pointer">👤 Sign In</a>
+            <a href="#" id="signin-link-desktop" data-signin class="hover:text-gray-900 cursor-pointer" aria-hidden="true"> <span aria-hidden="true">👤</span> Sign In</a>
             <button id="logout-btn-desktop"
                 class="hidden bg-red-500 text-white px-3 py-1 rounded-lg text-sm hover:bg-red-600 transition">Logout</button>
         </div>
@@ -46,7 +46,7 @@
 
         <!-- Submit Listing Button -->
         <button id="submitListingBtn"
-            class="md:block border border-gray-700 text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+            class="md:block border border-gray-700 text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100 cursor-pointer" aria-label="Submit Listing">
             Submit Listing
         </button>
 
@@ -121,7 +121,7 @@
             <button id="logout-btn-mobile"
                 class="hidden bg-red-500 text-white px-3 py-1 rounded-lg text-sm hover:bg-red-600 transition">Logout</button>
         </div>
-        <button class="border border-gray-700 text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100">Submit
+        <button class="border border-gray-700 text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100" >Submit
             Listing</button>
     </nav>
 
@@ -164,42 +164,45 @@
 
             <!-- Search Bar -->
             <div class="mt-8 flex justify-center">
-                <div
-                    class="bg-white rounded-2xl shadow-lg md:rounded-full flex flex-wrap md:flex-nowrap items-center px-4 py-3 space-y-3 md:space-y-0 md:space-x-4 w-full max-w-3xl">
-
-                    <select id="typeFilter" class="bg-transparent text-gray-700 outline-none px-2 cursor-pointer">
+                <div class="bg-white rounded-2xl shadow-lg md:rounded-full flex flex-wrap md:flex-nowrap items-center px-4 py-3 space-y-3 md:space-y-0 md:space-x-4 w-full max-w-3xl">
+                    <label for="typeFilter" class="sr-only">Car Type</label>
+                    <select id="typeFilter" name="typeFilter" class="bg-transparent text-gray-700 outline-none px-2 cursor-pointer">
                         <option value="">All Types</option>
                         <option value="SUV">SUV</option>
                         <option value="Sedan">Sedan</option>
                         <option value="Van">Van</option>
                         <option value="Convertible">Convertible</option>
                     </select>
-
-                    <select id="fuelFilter" class="bg-transparent text-gray-700 outline-none px-2 cursor-pointer">
+            
+                    <label for="fuelFilter" class="sr-only">Fuel Type</label>
+                    <select id="fuelFilter" name="fuelFilter" class="bg-transparent text-gray-700 outline-none px-2 cursor-pointer">
                         <option value="">All Fuel Types</option>
                         <option value="Petrol">Petrol</option>
                         <option value="Diesel">Diesel</option>
                     </select>
-
-                    <select id="transmissionFilter"
-                        class="bg-transparent text-gray-700 outline-none px-5 cursor-pointer">
+            
+                    <label for="transmissionFilter" class="sr-only">Transmission Type</label>
+                    <select id="transmissionFilter" name="transmissionFilter" class="bg-transparent text-gray-700 outline-none px-5 cursor-pointer">
                         <option value="">All Transmissions</option>
                         <option value="CVT">CVT</option>
                         <option value="Automatic">Automatic</option>
                         <option value="Manual">Manual</option>
                     </select>
-                    <select id="priceFilter" class="bg-transparent text-gray-700 outline-none px-2 cursor-pointer">
+            
+                    <label for="priceFilter" class="sr-only">Price Range</label>
+                    <select id="priceFilter" name="priceFilter" class="bg-transparent text-gray-700 outline-none px-2 cursor-pointer">
                         <option value="">All Prices</option>
                         <option value="0-50000">Under $50,000</option>
                         <option value="50000-100000">$50,000 to $100,000</option>
                         <option value="100000-">Over $100,000</option>
                     </select>
-
+            
                     <!-- Search Button -->
                     <button id="searchButton"
-                        class="bg-blue-600 text-white rounded-full p-3 w-full md:w-auto flex justify-center ml-auto cursor-pointer">
+                        class="bg-blue-600 text-white rounded-full p-3 w-full md:w-auto flex justify-center ml-auto cursor-pointer"
+                        aria-label="Search for cars">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
+                            stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M21 21L15 15M17 10a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
@@ -211,7 +214,7 @@
 
             <!-- Car Image -->
             <div class="mt-10 flex justify-center">
-                <img src="assets/slider51.png.png" alt="Car" class="max-w-full md:max-w-4xl px-2 md:px-0">
+                <img src="assets/slider51.png.png" alt="Car" class="max-w-full md:max-w-4xl px-2 md:px-0" loading="lazy">
             </div>
          
         </section>
@@ -230,6 +233,9 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
+    </div>
+    <div id="typing-indicator" class="hidden">
+        <span class="text-gray-500">AI is typing...</span>
     </div>
     <div id="chat-messages" class="h-80 overflow-y-auto p-4"></div>
     <div class="p-4 border-t">
@@ -250,7 +256,7 @@
                 <!-- SUV -->
                 <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('SUV')">
-                    <img src="/assets/SUV.png" alt="SUV" class="w-8 h-8">
+                    <img src="/assets/SUV.png" alt="SUV" class="w-8 h-8" loading="lazy">
                     <span class="text-sm font-semibold text-gray-900 mt-2">SUV</span>
                 </div>
 
@@ -264,49 +270,49 @@
                 <!-- Hatchback -->
                 <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('Hatchback')">
-                    <img src="/assets/HATCHBACK.png" alt="Hatchback" class="w-8 h-8">
+                    <img src="/assets/HATCHBACK.png" alt="Hatchback" class="w-8 h-8" loading="lazy">
                     <span class="text-sm font-semibold text-gray-900 mt-2">Hatchback</span>
                 </div>
 
                 <!-- Coupe -->
                 <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('Coupe')">
-                    <img src="/assets/Coupe.png" alt="Coupe" class="w-8 h-8">
+                    <img src="/assets/Coupe.png" alt="Coupe" class="w-8 h-8" loading="lazy">
                     <span class="text-sm font-semibold text-gray-900 mt-2">Coupe</span>
                 </div>
 
                 <!-- Hybrid -->
                 <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('Hybrid')">
-                    <img src="/assets/Hybrid.png" alt="Hybrid" class="w-8 h-8">
+                    <img src="/assets/Hybrid.png" alt="Hybrid" class="w-8 h-8" loading="lazy">
                     <span class="text-sm font-semibold text-gray-900 mt-2">Hybrid</span>
                 </div>
 
                 <!-- Convertible -->
                 <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('Convertible')">
-                    <img src="/assets/Convertible.png" alt="Convertible" class="w-8 h-8">
+                    <img src="/assets/Convertible.png" alt="Convertible" class="w-8 h-8" loading="lazy">
                     <span class="text-sm font-semibold text-gray-900 mt-2">Convertible</span>
                 </div>
 
                 <!-- Van -->
                 <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('Van')">
-                    <img src="/assets/Van.png" alt="Van" class="w-8 h-8">
+                    <img src="/assets/Van.png" alt="Van" class="w-8 h-8" loading="lazy">
                     <span class="text-sm font-semibold text-gray-900 mt-2">Van</span>
                 </div>
 
                 <!-- Truck -->
                 <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('Truck')">
-                    <img src="/assets/Truck.png" alt="Truck" class="w-8 h-8">
+                    <img src="/assets/Truck.png" alt="Truck" class="w-8 h-8" loading="lazy">
                     <span class="text-sm font-semibold text-gray-900 mt-2">Truck</span>
                 </div>
 
                 <!-- Electric -->
                 <div class="flex flex-col items-center p-4 w-24 h-24 bg-white border rounded-xl shadow-sm hover:shadow-md cursor-pointer"
                     onclick="goToMostSearchedType('Electric')">
-                    <img src="/assets/Electric.png" alt="Electric" class="w-8 h-8">
+                    <img src="/assets/Electric.png" alt="Electric" class="w-8 h-8" loading="lazy">
                     <span class="text-sm font-semibold text-gray-900 mt-2">Electric</span>
                 </div>
             </div>
@@ -698,10 +704,10 @@
                 <!-- Social Media -->
                 <h3 class="font-semibold text-lg mt-6 mb-4">Connect With Us</h3>
                 <div class="space-x-4 text-gray-600 ">
-                    <a href="#" class="text-xl hover:text-gray-900"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-xl hover:text-gray-900"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-xl hover:text-gray-900"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-xl hover:text-gray-900"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-xl hover:text-gray-900" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-xl hover:text-gray-900" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-xl hover:text-gray-900" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-xl hover:text-gray-900" aria-label="Linkdln"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
