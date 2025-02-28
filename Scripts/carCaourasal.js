@@ -13,8 +13,8 @@ let selectedType = 'In Stock';
 // Function to fetch car data from JSON
 async function fetchCars() {
     try {
-        const response = await fetch('cars.json'); // Adjust path if needed
-       const cars = await response.json();
+        const response = await fetch('/Data/cars.json'); // Adjust path if needed
+        const cars = await response.json();
         
         latestCars = cars.filter(car => car.isLatest === true);// Assign to latest cars globally
         mostSearchedCars = cars.filter(car=>car.mostSearched ===true); // Assign to most searched cars globally

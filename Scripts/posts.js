@@ -1,6 +1,6 @@
 async function fetchBlogPosts() {
     try {
-        const response = await fetch('posts.json'); // Adjust path if needed
+        const response = await fetch('/Data/posts.json'); // Adjust path if needed
         if (!response.ok) throw new Error('Network response was not ok');
         
         const posts = await response.json();
@@ -20,7 +20,7 @@ function renderBlogPosts(posts) {
 
         postCard.innerHTML = `
             <div class="relative">
-                <img src="${post.image}" alt="${post.title}" class="w-full h-56 object-cover">
+                <img src="${post.image}" alt="${post.title}" class="w-full h-56 object-cover" >
                 <span class="absolute top-3 left-3 bg-white text-gray-700 text-xs font-medium px-2 py-1 rounded-lg shadow">${post.tags[0]}</span>
             </div>
             <div class="p-4">

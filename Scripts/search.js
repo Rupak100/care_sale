@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchButton = document.getElementById('searchButton');
     searchButton.addEventListener('click', async function() {
         try {
-            const response = await fetch('cars.json');
+            const response = await fetch('/Data/cars.json');
             if (!response.ok) {
                 throw new Error('Network response was not ok: ' + response.statusText);
             }

@@ -1,7 +1,7 @@
 async function fetchTeamData() {
     try {
         console.log('Fetching team data...');
-        const response = await fetch('team.json'); // Adjust path if needed
+        const response = await fetch('/Data/team.json'); // Adjust path if needed
         console.log('Response status:', response.status);
         
         if (!response.ok) throw new Error('Network response was not ok');

@@ -74,7 +74,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Function to show modal
+
+
+
+
+    // submit listing
+    
+
+
+
+
+    // Function to show modal for newletter model
     function showModal() {
         const modal = document.getElementById('congratulations-modal');
         modal?.classList.remove('hidden');
@@ -85,6 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1000);
     }
 
+
+    
     // Event listener for the Signup button
     document.getElementById('signup-button')?.addEventListener('click', () => {
         const emailInput = document.getElementById('email-input');
@@ -100,9 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // submit listing
     
-
     // Close modal functionality
     document.getElementById('modal-close')?.addEventListener('click', () => {
         document.getElementById('congratulations-modal')?.classList.add('hidden');
@@ -112,3 +122,4 @@ document.addEventListener("DOMContentLoaded", function () {
     const savedName = localStorage.getItem("userName");
     updateUserUI(savedName);
 });
+

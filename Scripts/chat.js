@@ -1,5 +1,5 @@
-const API_KEY = ""; // Replace with your actual API key
-const API_URL = ""; // Use the correct model
+const API_KEY = "AIzaSyDAKXM3JOKbv6l3AE6hKGMnzlEEQ-oQjhA"; // Replace with your actual API key
+const API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent"; // Use the correct model
 
 const chatIcon = document.getElementById('chat-icon');
 const chatBox = document.getElementById('chat-box');
@@ -66,3 +66,7 @@ async function sendMessage() {
     // Scroll to bottom
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
+
+
+
+// https://mmg14xj7-5500.inc1.devtunnels.ms/

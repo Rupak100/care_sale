@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "T-Cross – 2023",
+        "name": "Range Rover – 2023",
         "description": "4.0 D5 PowerPulse Momentum 5dr AWD",
         "mileage": "15 Miles",
         "fuel": "Petrol",
@@ -10,7 +10,7 @@
         "image": "/assets/latest_cars/latest1.png",
         "detailsLink": "#",
         "type": "SUV",
-        "isLatest": true,
+        "isLatest": false,
         "mostSearched": true
     },
     {
@@ -24,7 +24,7 @@
         "image": "/assets/latest_cars/latest2.png",
         "detailsLink": "#",
         "type": "Sedan",
-        "isLatest": true,
+        "isLatest": false,
         "mostSearched": true
     },
     {
@@ -58,36 +58,6 @@
         "mostSearched": true
     },
     {
-        "id": 5,
-        "name": "Ford Transit – 2021",
-        "description": "4.0 D5 PowerPulse Momentum 5dr AWD...",
-        "mileage": "2500 Miles",
-        "fuel": "Diesel",
-        "transmission": "Manual",
-        "price": "$22,000",
-        "image": "/assets/cars/car1.png",
-        "detailsLink": "#",
-        "label": "Great Price",
-        "type": "SUV",
-        "isLatest": true,
-        "mostSearched": false
-    },
-    {
-        "id": 6,
-        "name": "New GLC – 2023",
-        "description": "4.0 D5 PowerPulse Momentum 5dr AWD...",
-        "mileage": "50 Miles",
-        "fuel": "Petrol",
-        "transmission": "Automatic",
-        "price": "$95,000",
-        "image": "/assets/cars/car2.png",
-        "detailsLink": "#",
-        "label": "Low Mileage",
-        "type": "Van",
-        "isLatest": false,
-        "mostSearched": true
-    },
-    {
         "id": 7,
         "name": "Audi A6 3.5 – New",
         "description": "3.5 D5 PowerPulse Momentum 5dr AWD...",
@@ -104,10 +74,10 @@
     },
     {
         "id": 7,
-        "name": "Audi A6 3.5 – New",
+        "name": "Mini Cooper",
         "description": "3.5 D5 PowerPulse Momentum 5dr AWD...",
         "mileage": "100 Miles",
-        "fuel": "Petrol",
+        "fuel": "Diesel",
         "transmission": "Automatic",
         "price": "$58,000",
         "image": "/assets/cars/car4.png",
@@ -119,7 +89,7 @@
     },
     {
         "id": 8,
-        "name": "Corolla Altis – 2023",
+        "name": "Mercedez A Class – 2023",
         "description": "3.5 D5 PowerPulse Momentum 5dr AWD...",
         "mileage": "15000 Miles",
         "fuel": "Petrol",
@@ -133,33 +103,18 @@
         "mostSearched": true
     },
     {
-        "id": 9,
-        "name": "Corolla Altis – 2023",
-        "description": "3.5 D5 PowerPulse Momentum 5dr AWD...",
-        "mileage": "15000 Miles",
-        "fuel": "Petrol",
-        "transmission": "CVT",
-        "price": "$45,000",
-        "image": "assets/cars/car-png-16838.png",
-        "detailsLink": "#",
-        "label": null,
-        "type": "Convertible",
-        "isLatest": true,
-        "mostSearched": true
-    },
-    {
         "id": 10,
         "name": "Corolla Altis – 2023",
         "description": "3.5 D5 PowerPulse Momentum 5dr AWD...",
         "mileage": "15000 Miles",
-        "fuel": "Petrol",
+        "fuel": "Diesel",
         "transmission": "CVT",
         "price": "$45,000",
         "image": "assets/cars/car-png-16831.png",
         "detailsLink": "#",
         "label": null,
         "type": "Convertible",
-        "isLatest": false,
+        "isLatest": true,
         "mostSearched": false
     }
 ]
